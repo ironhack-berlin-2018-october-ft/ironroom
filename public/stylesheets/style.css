@@ -20,8 +20,6 @@ a {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 54px); }
-  .home-page > * {
-    padding: 30px 0; }
 
 .join-form {
   display: flex;
@@ -123,6 +121,9 @@ a {
       width: 100%; }
       .rooms-body .chat-box .chat-input #chatInput {
         width: 100%; }
+
+.buttons {
+  margin: 60px 0; }
 
 ::-webkit-scrollbar {
   display: none; }

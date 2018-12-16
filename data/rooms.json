@@ -1,18 +1,67 @@
 [
   {
+    "url": "/rooms/0",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "Hello world!"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Is there anyone?"
+      },
+      {
+        "timeInMin": 0,
+        "text": "It looks like we can communicate"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Can you tell me if you are here?"
+      },
+      {
+        "timeInMin": 1,
+        "text": "SOS"
+      },
+      {
+        "timeInMin": 1,
+        "text": "I feel alone"
+      }
+    ]
+  },
+  {
     "url": "/rooms/1",
     "hints": [
       {
-        "timeInMin": 2,
-        "text": "Have you seen the URL"
+        "timeInMin": 0,
+        "text": "Thank god!"
       },
       {
-        "timeInMin": 5,
+        "timeInMin": 0,
+        "text": "So glad to see I'm not alone!"
+      },
+      {
+        "timeInMin": 0,
+        "text": "I’m in a closed room with a screen, a chat and a door"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Appartently, you can help me"
+      },
+      {
+        "timeInMin": 0,
+        "text": "To be honest, I don’t really like this place and I don’t want to discover what will happen when the timer is done"
+      },
+      {
+        "timeInMin": 2,
+        "text": "Oh, have you seen the URL of the page?"
+      },
+      {
+        "timeInMin": 3,
         "text": "Have you tried to change 1 by 2 in the URL?"
       },
       {
-        "timeInMin": 6,
-        "text": "Are you stupid?"
+        "timeInMin": 4,
+        "text": "I don't think you've changed the URL"
       }
     ]
   },
@@ -20,16 +69,53 @@
     "url": "/rooms/2",
     "hints": [
       {
+        "timeInMin": 0,
+        "text": "Oh, the door just opened!"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Have you done anything?"
+      },
+      {
+        "timeInMin": 0,
+        "text": "If yes, thanks a lot!"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Oh no, the second room looks the same: another door and another screen with Inspector Gadget"
+      },
+      {
         "timeInMin": 2,
-        "text": "Lorem"
+        "text": "Inspector Gadget... maybe we should inspect the screen in a different way"
+      },
+      {
+        "timeInMin": 4,
+        "text": "Maybe you can right click on the picture and select 'Inspect'"
       },
       {
         "timeInMin": 5,
-        "text": "Lorem ipsum"
+        "text": "If I remember well, images have a alt tag in HTML"
+      }
+    ]
+  },
+  {
+    "url": "/rooms/gadget",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "Yeah, the door opens!"
       },
       {
-        "timeInMin": 6,
-        "text": "Are you stupid?"
+        "timeInMin": 0,
+        "text": "And there is another room"
+      },
+      {
+        "timeInMin": 0,
+        "text": "What is Maxence's favorite drink? "
+      },
+      {
+        "timeInMin": 0,
+        "text": "Not so many information, maybe we should change the URL again"
       }
     ]
   },
@@ -37,16 +123,24 @@
     "url": "/rooms/chartreuse",
     "hints": [
       {
-        "timeInMin": 2,
-        "text": "Lorem ipsum"
+        "timeInMin": 0,
+        "text": "Oh Chartreuse, I've heard about it!"
       },
       {
-        "timeInMin": 5,
-        "text": "Lorem ipsum dolor"
+        "timeInMin": 0,
+        "text": "It's a French liquor"
       },
       {
-        "timeInMin": 6,
-        "text": "Are you stupid?"
+        "timeInMin": 0,
+        "text": "55%, really strong drink"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Any way, we have to solve this problem again"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Chartreuse has probably another meaning"
       }
     ]
   }

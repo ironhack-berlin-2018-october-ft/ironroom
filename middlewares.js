@@ -1,3 +1,4 @@
+const Team = require('./models/Team')
 const rooms = require('./data/rooms')
 
 module.exports = {
@@ -15,7 +16,18 @@ module.exports = {
     }
   },
   roomsMiddleware: function (req, res, next) {
+    if (!req.user) {
+      res.redirect('/join')
+      return
+    }
+
     res.locals.layout = 'roomsLayout'
-    next()
+
+    const curRoomIndex = rooms.findIndex(room => room.url === req.originalUrl)
+    if (curRoomIndex <= req.user.roomIndex) next()
+    else {
+      Team.findByIdAndUpdate(req.user._id, { roomIndex: curRoomIndex })
+        .then(team => next())
+    }
   },
 };

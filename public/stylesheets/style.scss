@@ -52,9 +52,7 @@ a {
   @include flex-props();
   height: $window-height;
 
-  > * {
-    padding: 30px 0;
-  }
+  
 }
 
 .join-form {
@@ -140,6 +138,11 @@ a {
   }
 }
 
+.buttons {
+  margin: 60px 0;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
+

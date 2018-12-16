@@ -31,7 +31,7 @@ router.post("/join", (req, res, next) => {
     newTeam.save()
       .then(teamDoc => {
         req.login(teamDoc, () => {
-          res.redirect("/rooms/1");
+          res.redirect("/rooms");
         })
       })
       .catch(err => {

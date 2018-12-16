@@ -84,6 +84,7 @@ app.use((req, res, next) => {
     res.locals.duration = require("./data/constants").duration;
     res.locals.startingAt = Math.round(req.user.startingAt.getTime() / 1000);
   }
+  res.locals.isConnected = req.isAuthenticated();
   res.locals.isInRoom = req.path.startsWith("/rooms");
   next();
 });

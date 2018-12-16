@@ -51,12 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
           method: "POST",
           body: new URLSearchParams(`input=${document.querySelectorAll('#chatInput')[0].value.trim()}`)
         }
-      ).then((response) => {
-        return response.text();
-      }).then((result) => {
-        document.querySelectorAll('#chatArea')[0].innerHTML = result; // FIXME share between GET and POST
-        document.querySelectorAll('#chatInput')[0].value = ''
-      }); // FIXME: handle error 
+      )
+        .then(response => response.text())
+        .then(result => {
+          document.querySelectorAll('#chatArea')[0].innerHTML = result; // FIXME share between GET and POST
+          document.querySelectorAll('#chatInput')[0].value = ''
+
+          // For the first interaction, we go to the next page
+          if (window.location.pathname === '/rooms/0') {
+            window.location.pathname = '/rooms/1'
+            // window.history.pushState('', '', '/rooms/1');
+          }
+        }); // FIXME: handle error 
     }
   });
 

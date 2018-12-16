@@ -3,11 +3,19 @@
 
   <h1>WELCOME TO THE IRONROOM</h1>
 
+  <div class="buttons">
+    {{#if isConnected}}
+    <a href="/rooms" class="btn btn-dark">
+      Join your room
+    </a>
+    {{else}}
+    <a href="/join" class="btn btn-dark">
+      Create Your Team
+    </a>
+    {{/if}}
+  </div>
+
   <img src="https://www.refreshmiami.com/wp-content/uploads/2018/07/55085_logo-ironhack.png" alt="55085_logo-ironhack"
-    title="55085_logo-ironhack" style="max-height:400px;margin:0 auto;" draggable="false">
+    style="max-height:200px;margin:0 auto;">
 
-  <a href="/join">
-
-    <button class="btn btn-dark">Create Your Team</button>
-  </a>
 </div>

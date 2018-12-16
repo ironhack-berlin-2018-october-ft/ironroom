@@ -10,20 +10,18 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/chat', isConnected, (req, res, next) => {
-  Team.findById(req.user.id).then((doc) => {
+  const team = req.user
 
-    // FIXME: move this to logic on the model instead of here in the controller
-    roomsArr[doc.roomNb].hints.filter((h) => {
-      return (new Date(doc.enteredAt).getTime() + (h.timeInMin * 60 * 1000)) < Date.now()
-    }).forEach((h) => {
-      // FIXME: this should be moved someplace else to check which message should be pushed
-      if (!doc.messages.map(m => m.text).includes(h.text)) {
-        doc.messages.push({ isFromTeam: false, text: h.text })
-      }
-    })
-    doc.save().then(() => {
-      res.render('chat', { layout: false, messages: doc.messages, teamname: doc.name });
-    })
+  // FIXME: move this to logic on the model instead of here in the controller
+  let hintToPush = roomsArr[team.roomIndex].hints.find((h) => {
+    return (new Date(team.enteredAt).getTime() + (h.timeInMin * 60 * 1000)) < Date.now() && !team.messages.map(m => m.text).includes(h.text)
+  })
+
+  if (hintToPush) {
+    team.messages.push({ isFromTeam: false, text: hintToPush.text })
+  }
+  team.save().then(() => {
+    res.render('chat', { layout: false, messages: team.messages, teamname: team.name });
   })
 })
 
@@ -32,8 +30,11 @@ router.post('/chat', isConnected, (req, res, next) => {
     // slice creates a copy so the messages pushed later are noe rendered as well.
     res.render('chat', { layout: false, messages: doc.messages.slice(), teamname: doc.name });
     // also enter John's response ( will be fetched at next 5 sec interval )
-    doc.messages.push({ isFromTeam: false, text: 'please, focus on helping me out here not just texting something !' })
-    doc.save()
+
+    if (doc.roomIndex > 1) {
+      doc.messages.push({ isFromTeam: false, text: 'please, focus on helping me out here not just texting something !' })
+      doc.save()
+    }
   })
 })
 
