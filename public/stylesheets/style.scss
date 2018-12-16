@@ -1,8 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+
+//  Variables
+$nav-height: 54px;
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Roboto Mono", Helvetica, Arial, sans-serif;
+  background-color: rgb(221, 221, 221);
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+@mixin flex-props {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin form-props {
+  width: 40rem;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+}
+
+#timer {
+  font-size: 2rem;
+  color: white;
+}
+
+.join-form {
+  @include flex-props();
+  margin-top: 130px;
+
+  .team-name {
+    @include flex-props();
+
+    h2 {
+      font-size: 36px;
+    }
+    input {
+      @include form-props();
+    }
+  }
+  .players-form {
+    @include flex-props();
+
+    input {
+      @include form-props();
+    }
+  }
+}
+
+.high-scores-container {
+  @include flex-props();
+
+  .tables-container {
+    @include flex-props();
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
 }
