@@ -29,6 +29,11 @@ a {
   text-align: center;
 }
 
+#timer {
+  font-size: 2rem;
+  color: white;
+}
+
 .join-form {
   @include flex-props();
   margin-top: 130px;
