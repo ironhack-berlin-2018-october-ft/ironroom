@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 body {
   font: 14px "Roboto Mono", Helvetica, Arial, sans-serif;
-  background-color: #dddddd; }
+  background-color: #dddddd;
+  overflow: hidden; }
 
 a {
   color: #00b7ff; }
@@ -19,6 +20,8 @@ a {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 54px); }
+  .home-page > * {
+    padding: 30px 0; }
 
 .join-form {
   display: flex;
@@ -81,5 +84,47 @@ a {
       flex-direction: column;
       justify-content: center;
       align-items: center; }
+
+.rooms-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: calc(100vh - 54px); }
+  .rooms-body .body {
+    width: calc(100vw - 300px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .rooms-body .chat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c4c4c4;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+    overflow: hidden; }
+    .rooms-body .chat-box .chat-area {
+      overflow: auto;
+      max-height: calc(100% - 70px);
+      align-self: flex-start;
+      padding-right: 17px;
+      /* Increase/decrease this value for cross-browser compatibility */
+      box-sizing: content-box;
+      /* So the width will be 100% + 17px */ }
+    .rooms-body .chat-box .chat-input {
+      width: 100%; }
+      .rooms-body .chat-box .chat-input #chatInput {
+        width: 100%; }
+
+::-webkit-scrollbar {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
