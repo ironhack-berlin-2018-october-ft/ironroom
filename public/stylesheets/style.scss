@@ -2,6 +2,7 @@
 
 //  Variables
 $nav-height: 54px;
+$window-height: calc(100vh - 54px);
 
 body {
   font: 14px "Roboto Mono", Helvetica, Arial, sans-serif;
@@ -12,6 +13,11 @@ a {
   color: #00b7ff;
 }
 
+.border-right-nbs {
+  td {
+    border-right: 2px solid black;
+  }
+}
 @mixin flex-props {
   display: flex;
   flex-direction: column;
@@ -29,9 +35,21 @@ a {
   text-align: center;
 }
 
+@mixin font-props {
+  font-family: Roboto Mono;
+  font-style: normal;
+  line-height: normal;
+  font-size: 18px;
+}
+
 #timer {
   font-size: 2rem;
   color: white;
+}
+
+.home-page {
+  @include flex-props();
+  height: $window-height;
 }
 
 .join-form {
@@ -59,11 +77,21 @@ a {
 
 .high-scores-container {
   @include flex-props();
+  margin: 4rem;
+
+  h2 {
+    font-size: 3rem;
+  }
 
   .tables-container {
     @include flex-props();
+    @include font-props();
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
+    .scores {
+      margin-top: 30px;
+      @include flex-props();
+    }
   }
 }
