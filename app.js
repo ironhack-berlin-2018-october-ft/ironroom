@@ -16,7 +16,7 @@ const flash = require("connect-flash");
 
 mongoose
   .connect(
-    "mongodb://localhost/ironroom",
+    process.env.MONGODB_URI || "mongodb://localhost/ironroom",
     { useNewUrlParser: true }
   )
   .then(x => {
