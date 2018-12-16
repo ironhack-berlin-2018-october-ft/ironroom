@@ -1,16 +1,36 @@
+<div class="join-form">
 
-<h2>Join</h2>
+  <div class="team-name">
 
-<form action="/join" method="POST" id="form-container">
-  <label for="name">Team name</label>
-  <input id="name" type="text" name="name" placeholder="JonSnow">
 
-  <br>
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
+    <h2>Choose your team name...</h2>
 
-  <br><br>
+    <form action="/join" method="POST" id="form-container">
 
-  <button>Join</button>
-</form>
+      <input class="form-control" id="name" type="text" name="name" placeholder="Team Name">
+
+      <br>
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+
+      <br><br>
+
+
+  </div>
+
+
+  <div class="players-form">
+    <input class="form-control" id="playername" type="text" name="playername" placeholder="Player 1">
+    <input class="form-control" id="playername" type="text" name="playername" placeholder="Player 2">
+    <input class="form-control" id="playername" type="text" name="playername" placeholder="Player 3">
+    <input class="form-control" id="playername" type="text" name="playername" placeholder="Player 4">
+    <input class="form-control" id="playername" type="text" name="playername" placeholder="Player 5">
+    <input class="form-control" id="playername" type="text" name="playername" placeholder="Player 6">
+
+
+  </div>
+
+  <button class="btn btn-dark ">Enter the Room</button>
+  </form>
+</div>
