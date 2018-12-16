@@ -1,8 +1,17 @@
+const rooms = require('./data/rooms')
+
 module.exports = {
   isConnected: function (req, res, next) {
-    console.log("isConnected!")
-    console.log(req.user)
     if (req.user) next()
     else res.redirect('/join')
-  }
+  },
+  redirectToNextRoom: function (req, res, next) {
+    const curRoomIndex = rooms.findIndex(room => room.url === req.originalUrl)
+    if (curRoomIndex < rooms.length - 1) {
+      res.redirect(rooms[curRoomIndex + 1].url)
+    }
+    else {
+      res.redirect('/success')
+    }
+  },
 };
