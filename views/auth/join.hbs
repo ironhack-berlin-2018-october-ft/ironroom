@@ -1,0 +1,16 @@
+
+<h2>Join</h2>
+
+<form action="/join" method="POST" id="form-container">
+  <label for="name">Team name</label>
+  <input id="name" type="text" name="name" placeholder="JonSnow">
+
+  <br>
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br><br>
+
+  <button>Join</button>
+</form>
