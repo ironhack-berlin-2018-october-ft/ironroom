@@ -20,4 +20,8 @@ router.post('/chat', isConnected, (req, res, next) => {
   })
 })
 
+router.get('/game-over', (req, res, next) => {
+  res.render('game-over')
+})
+
 module.exports = router;
