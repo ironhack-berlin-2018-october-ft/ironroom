@@ -66,7 +66,7 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 });
 
 // default value for title local
-app.locals.title = "Express - Generated with IronGenerator";
+app.locals.title = "IronRoom";
 
 // Enable authentication using session + passport
 app.use(
@@ -79,6 +79,19 @@ app.use(
 );
 app.use(flash());
 require("./passport")(app);
+
+app.use((req, res, next) => {
+  if (req.user) {
+    res.locals.duration = require("./data/constants").duration;
+    res.locals.startingAt = Math.round(req.user.startingAt.getTime() / 1000);
+  }
+  res.locals.isInRoom = req.path.startsWith("/rooms");
+  next();
+});
+
+app.use("/", require("./routes/index"));
+app.use("/", require("./routes/auth"));
+app.use("/rooms", require("./routes/rooms"));
 
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth"));

@@ -10,6 +10,15 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <div id="timer"></div>
 
   <title>IronRoom</title>
 </head>
@@ -17,7 +26,7 @@
 <body>
 
   <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src="/images/icon_white.png" width="30" height="" class="d-inline-block align-center" alt="">
       IronRoom
     </a>
@@ -28,16 +37,51 @@
   </nav>
 
 
+
+
+
+
+  {{startingAt}}
+
+
+
   {{{body}}}
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+  <script src="/javascripts/script.js"></script>
+
+  {{#if isInRoom}}
+  <script>
+    let duration = {{ duration }} + 0
+    let startingAt = {{ startingAt }} + 0
+    let currentTimestamp = Math.floor(Date.now() / 1000)
+    var nbOfSeconds = duration + startingAt - currentTimestamp
+
+    displayTimer()
+
+    setInterval(() => {
+      nbOfSeconds--
+      if (nbOfSeconds < 0) {
+        window.location.pathname = '/game-over'
+      }
+      displayTimer()
+    }, 1000)
+
+    function displayTimer() {
+      let h = Math.floor(nbOfSeconds / (60 * 60))
+      let m = Math.floor((nbOfSeconds - h * 60 * 60) / 60)
+      let s = nbOfSeconds - (h * 60 * 60) - (m * 60)
+      document.getElementById('timer').innerHTML = `${addExtraZero(h)}:${addExtraZero(m)}:${addExtraZero(s)}`
+    }
+
+    function addExtraZero(number) {
+      if (number < 10) {
+        return '0' + number
+      }
+      return '' + number
+    }
+  </script>
+  {{/if}}
+
 </body>
 
 </html>
