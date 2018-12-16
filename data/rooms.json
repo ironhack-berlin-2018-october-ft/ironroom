@@ -1,0 +1,53 @@
+[
+  {
+    "url": "/rooms/1",
+    "hints": [
+      {
+        "timeInMin": 2,
+        "text": "Have you seen the URL"
+      },
+      {
+        "timeInMin": 5,
+        "text": "Have you tried to change 1 by 2 in the URL?"
+      },
+      {
+        "timeInMin": 6,
+        "text": "Are you stupid?"
+      }
+    ]
+  },
+  {
+    "url": "/rooms/2",
+    "hints": [
+      {
+        "timeInMin": 2,
+        "text": "Lorem"
+      },
+      {
+        "timeInMin": 5,
+        "text": "Lorem ipsum"
+      },
+      {
+        "timeInMin": 6,
+        "text": "Are you stupid?"
+      }
+    ]
+  },
+  {
+    "url": "/rooms/carrot",
+    "hints": [
+      {
+        "timeInMin": 2,
+        "text": "Lorem ipsum"
+      },
+      {
+        "timeInMin": 5,
+        "text": "Lorem ipsum dolor"
+      },
+      {
+        "timeInMin": 6,
+        "text": "Are you stupid?"
+      }
+    ]
+  }
+]
