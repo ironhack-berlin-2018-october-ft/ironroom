@@ -8,6 +8,7 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
+const { roomsMiddleware } = require('./middlewares')
 
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
@@ -91,7 +92,7 @@ app.use((req, res, next) => {
 
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth"));
-app.use("/rooms", require("./routes/rooms"));
+app.use("/rooms", roomsMiddleware, require("./routes/rooms"));
 app.use("/highscore", require("./routes/highscore"));
 
 module.exports = app;

@@ -14,4 +14,8 @@ module.exports = {
       res.redirect('/success')
     }
   },
+  roomsMiddleware: function (req, res, next) {
+    res.locals.layout = 'roomsLayout'
+    next()
+  },
 };
