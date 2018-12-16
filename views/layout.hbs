@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
 
   <nav>
@@ -14,8 +16,51 @@
     <a href="/join">Join</a>
   </nav>
 
+  <div id="timer"></div>
+
+  <hr>
+  {{startingAt}}
+  <hr>
+  <hr>
+
+
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
+
+  {{#if isInRoom}}
+  <script>
+    let duration = {{ duration }} + 0
+    let startingAt = {{ startingAt }} + 0
+    let currentTimestamp = Math.floor(Date.now() / 1000)
+    var nbOfSeconds = duration + startingAt - currentTimestamp
+
+    displayTimer()
+
+    setInterval(() => {
+      nbOfSeconds--
+      if (nbOfSeconds < 0) {
+        window.location.pathname = '/game-over'
+      }
+      displayTimer()
+    }, 1000)
+
+    function displayTimer() {
+      let h = Math.floor(nbOfSeconds / (60 * 60))
+      let m = Math.floor((nbOfSeconds - h * 60 * 60) / 60)
+      let s = nbOfSeconds - (h * 60 * 60) - (m * 60)
+      document.getElementById('timer').innerHTML = `${addExtraZero(h)}:${addExtraZero(m)}:${addExtraZero(s)}`
+    }
+
+    function addExtraZero(number) {
+      if (number < 10) {
+        return '0' + number
+      }
+      return '' + number
+    }
+  </script>
+  {{/if}}
+
 </body>
+
 </html>
