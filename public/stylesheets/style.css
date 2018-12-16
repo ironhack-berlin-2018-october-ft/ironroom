@@ -1,8 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Roboto Mono", Helvetica, Arial, sans-serif;
+  background-color: #dddddd; }
 
 a {
-  color: #00B7FF; }
+  color: #00b7ff; }
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 130px; }
+  .join-form .team-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .join-form .team-name h2 {
+      font-size: 36px; }
+    .join-form .team-name input {
+      width: 40rem;
+      background: #ffffff;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      border-radius: 5px;
+      margin: 10px;
+      text-align: center; }
+  .join-form .players-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .join-form .players-form input {
+      width: 40rem;
+      background: #ffffff;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      border-radius: 5px;
+      margin: 10px;
+      text-align: center; }
+
+.high-scores-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .high-scores-container .tables-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around; }
 
 /*# sourceMappingURL=style.css.map */
