@@ -24,4 +24,8 @@ router.get('/game-over', (req, res, next) => {
   res.render('game-over')
 })
 
+router.get('/success', (req, res, next) => {
+  res.render('success')
+})
+
 module.exports = router;

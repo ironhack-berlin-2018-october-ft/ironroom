@@ -1,5 +1,5 @@
 const express = require('express');
-const { isConnected } = require('../middlewares')
+const { isConnected, redirectToNextRoom } = require('../middlewares')
 
 const router = express.Router();
 
@@ -11,16 +11,17 @@ router.get('/2', isConnected, (req, res, next) => {
   res.render('rooms/2');
 });
 
-router.get('/chocolate', isConnected, (req, res, next) => {
-  res.render('rooms/chocolate');
+router.get('/chartreuse', isConnected, (req, res, next) => {
+  res.render('rooms/chartreuse');
 });
 
-router.post('/chocolate', isConnected, (req, res, next) => {
-  let { color } = req.body
-  if (color !== '7B3F00')
-    res.render('rooms/chocolate');
+router.post('/chartreuse', isConnected, (req, res, next) => {
+  let color = (req.body.color + "").toLowerCase()
+  if (color !== '7fff00')
+    res.render('rooms/chartreuse');
   else {
-    res.redirect('/rooms/wip')
+    redirectToNextRoom(req, res, next)
+    // res.redirect('/rooms/wip')
   }
 });
 
