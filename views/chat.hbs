@@ -1,0 +1,8 @@
+<div>
+  {{#each messages}}
+  <div>
+    <span><b>{{#if isFromTeam}}&lt;{{../teamname}}&gt;{{else}}&lt;john&gt;{{/if}}</b></span>
+    <span>{{text}}</span>
+  </div>
+  {{/each}}
+</div>
