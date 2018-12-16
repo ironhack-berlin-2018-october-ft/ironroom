@@ -14,7 +14,7 @@ router.get('/chat', isConnected, (req, res, next) => {
 
     // FIXME: move this to logic on the model instead of here in the controller
     roomsArr[doc.roomNb].hints.filter((h) => {
-      return (new Date(doc.enteredAt) + (h.timeInMin * 60 * 1000)) < new Date(Date.now())
+      return (new Date(doc.enteredAt).getTime() + (h.timeInMin * 60 * 1000)) < Date.now()
     }).forEach((h) => {
       // FIXME: this should be moved someplace else to check which message should be pushed
       if (!doc.messages.map(m => m.text).includes(h.text)) {
