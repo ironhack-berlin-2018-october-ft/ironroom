@@ -92,10 +92,6 @@ app.use((req, res, next) => {
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth"));
 app.use("/rooms", require("./routes/rooms"));
-
-app.use("/", require("./routes/index"));
-app.use("/", require("./routes/auth"));
-app.use("/rooms", require("./routes/rooms"));
 app.use("/highscore", require("./routes/highscore"));
 
 module.exports = app;
