@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // CHAT
   // ~~~~~~~~
   function updateChat() {
-    fetch('//localhost:3000/chat') // FIXME: update based on hostname
+    fetch('/chat') // FIXME: update based on hostname
       .then((response) => {
         return response.text();
       }).then((result) => {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('#chatInput')[0].addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
-      fetch('//localhost:3000/chat',
+      fetch('/chat',
         {
           method: "POST",
           body: new URLSearchParams(`input=${document.querySelectorAll('#chatInput')[0].value.trim()}`)
