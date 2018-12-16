@@ -40,9 +40,23 @@
 
 
 
+
+
+  {{startingAt}}
+
+
+
   {{{body}}}
-  {{!--
-  <script src="/javascripts/script.js"></script> --}}
+
+  <div id="chatArea"></div>
+
+  <div>
+    <textarea id="chatInput" style="resize: none;" placeholder="Type here..."></textarea>
+  </div>
+
+  <input id="timerDuration" style="display: none;" value="{{ duration }}"></input>
+  <input id="timerStartingAt" style="display: none;" value="{{ startingAt }}"></input>
+  <script src="/javascripts/rooms.js"></script>
 </body>
 
 </html>
