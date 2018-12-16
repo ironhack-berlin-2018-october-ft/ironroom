@@ -32,12 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // ~~~~~~~~
   // CHAT
   // ~~~~~~~~
+  function renderChat(html) {
+    let chatArea = document.querySelectorAll('#chatArea')[0]
+    chatArea.innerHTML = html;
+    // scroll to bottom always
+    chatArea.scrollTop = chatArea.scrollHeight;
+  }
+
   function updateChat() {
     fetch('/chat') // FIXME: update based on hostname
       .then((response) => {
         return response.text();
       }).then((result) => {
-        document.querySelectorAll('#chatArea')[0].innerHTML = result;
+        renderChat(result);
       });
   }
 
@@ -54,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       )
         .then(response => response.text())
         .then(result => {
-          document.querySelectorAll('#chatArea')[0].innerHTML = result; // FIXME share between GET and POST
+          renderChat(result);
           document.querySelectorAll('#chatInput')[0].value = ''
 
           // For the first interaction, we go to the next page
