@@ -108,6 +108,8 @@ a {
 
   .body {
     width: calc(100vw - 300px);
+    height: 100%;
+    @include flex-props();
   }
 
   .chat-box {
