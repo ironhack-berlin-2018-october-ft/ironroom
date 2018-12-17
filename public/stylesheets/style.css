@@ -131,4 +131,49 @@ a {
 .text-center {
   text-align: center; }
 
+.bridge-of-truth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%; }
+  .bridge-of-truth .bridge-form form input {
+    width: 450px;
+    height: 100px;
+    background-image: url("/images/bridge.jpg");
+    text-align: center;
+    cursor: default;
+    color: #724215;
+    font-size: 140px; }
+  .bridge-of-truth h1 {
+    font-size: 150px; }
+
+.event-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  width: 100%; }
+  .event-container .stack-container #div1 {
+    width: 361px;
+    height: 70px;
+    padding: 10px;
+    border-left: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa; }
+  .event-container .calls-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+
+.stackoverflow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
 /*# sourceMappingURL=style.css.map */

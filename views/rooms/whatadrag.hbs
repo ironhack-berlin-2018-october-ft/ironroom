@@ -1,0 +1,59 @@
+<div class="event-container">
+
+  <div class="stack-container">
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+  </div>
+
+
+
+  <div class="calls-container">
+
+    <img id="drag1" src="/images/stack.png" draggable="true" ondragstart="drag(event)" width="340px">
+    <img id="drag2" src="/images/stack.png" draggable="true" ondragstart="drag(event)" width="340px">
+    <img id="drag3" src="/images/stack.png" draggable="true" ondragstart="drag(event)" width="340px">
+    <img id="drag4" src="/images/stack.png" draggable="true" ondragstart="drag(event)" width="340px">
+    <img id="drag5" src="/images/stack.png" draggable="true" ondragstart="drag(event)" width="340px">
+    <img id="drag6" src="/images/stack.png" draggable="true" ondragstart="drag(event)" width="340px">
+    <img id="drag7" src="/images/stack.png" draggable="true" ondragstart="drag(event)" width="340px">
+  </div>
+
+
+</div>
+
+<div class="stackoverflow" style="display:none">
+  <img src="/images/stackoverflow-logo.png" alt="">
+  <img src="/images/stackoverflow.gif" alt="">
+</div>
+
+
+<script>
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+
+  $('.calls-container').on("DOMSubtreeModified", function () {
+    if ($('.calls-container')[0].childElementCount === 6) {
+      $('.event-container').toggle()
+      $('.stackoverflow').toggle()
+    }
+  })
+
+</script>

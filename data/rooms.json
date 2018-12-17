@@ -176,5 +176,50 @@
         "text": "Try typing in 'banana'."
       }
     ]
+  },
+  {
+    "url": "/rooms/bridgeoftruth",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "My my that that was really cryptic"
+      },
+      {
+        "timeInMin": 0,
+        "text": "What have we here...?"
+      },
+      {
+        "timeInMin": 0,
+        "text": "I see a bridge and it appears the meaning of life is on both sides of it"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Do you see it?"
+      },
+      {
+        "timeInMin": 1,
+        "text": "Okay good, it appears I can't cross it though. There are massive sections missing."
+      },
+      {
+        "timeInMin": 1,
+        "text": "Any ideas?"
+      },
+      {
+        "timeInMin": 2,
+        "text": "Hmm, not sure if this helps but the bridge is called 'The Bridge of Truth'"
+      },
+      {
+        "timeInMin": 3,
+        "text": "I guess it's something to do with comparative operators"
+      },
+      {
+        "timeInMin": 4,
+        "text": "=*2"
+      },
+      {
+        "timeInMin": 4,
+        "text": "=="
+      }
+    ]
   }
 ]

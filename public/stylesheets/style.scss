@@ -51,8 +51,6 @@ a {
 .home-page {
   @include flex-props();
   height: $window-height;
-
-  
 }
 
 .join-form {
@@ -146,6 +144,53 @@ a {
   display: none;
 }
 
-.text-center{
+.text-center {
   text-align: center;
+}
+
+.bridge-of-truth {
+  @include flex-props();
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+
+  .bridge-form {
+    form {
+      input {
+        width: 450px;
+        height: 100px;
+        background-image: url("/images/bridge.jpg");
+        text-align: center;
+        cursor: default;
+        color: #724215;
+        font-size: 140px;
+      }
+    }
+  }
+  h1 {
+    font-size: 150px;
+  }
+}
+
+.event-container {
+  @include flex-props();
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  width: 100%;
+  .stack-container {
+    #div1 {
+      width: 361px;
+      height: 70px;
+      padding: 10px;
+      border-left: 1px solid #aaaaaa;
+      border-right: 1px solid #aaaaaa;
+    }
+  }
+  .calls-container {
+    @include flex-props();
+  }
+}
+
+.stackoverflow {
+  @include flex-props();
 }
