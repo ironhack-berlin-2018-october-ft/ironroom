@@ -190,7 +190,7 @@
       },
       {
         "timeInMin": 2,
-        "text": "Seems like it's about both, but the url input should clearly be a string."
+        "text": "Seems like it's about both, but the input should clearly be a string."
       },
       {
         "timeInMin": 3,
@@ -203,6 +203,72 @@
       {
         "timeInMin": 5,
         "text": "Try typing in 'banana'."
+      }
+    ]
+  },
+  {
+    "url": "/rooms/banana",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "I've always wondered why NaN === NaN is false..."
+      },
+      {
+        "timeInMin": 0,
+        "text": "Let's see what's this one's about..."
+      },
+      {
+        "timeInMin": 1,
+        "text": "The form seems broken..."
+      },
+      {
+        "timeInMin": 2,
+        "text": "When there is no action to a form, it takes the current url as the value."
+      },
+      {
+        "timeInMin": 3,
+        "text": "But what about the method...?"
+      },
+      {
+        "timeInMin": 4,
+        "text": "Should a form send a get request? That sounds wierd."
+      },
+      {
+        "timeInMin": 5,
+        "text": "Try changing the form method to post in the dev tools elements tab."
+      }
+    ]
+  },
+  {
+    "url": "/rooms/form",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "Those developer tools are really handy!"
+      },
+      {
+        "timeInMin": 0,
+        "text": "What have we here?"
+      },
+      {
+        "timeInMin": 1,
+        "text": ""
+      },
+      {
+        "timeInMin": 2,
+        "text": ""
+      },
+      {
+        "timeInMin": 3,
+        "text": ""
+      },
+      {
+        "timeInMin": 4,
+        "text": ""
+      },
+      {
+        "timeInMin": 5,
+        "text": ""
       }
     ]
   }
