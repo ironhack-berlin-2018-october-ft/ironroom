@@ -50,5 +50,16 @@ router.post('/hex-color', (req, res, next) => {
   }
 })
 
+router.get('/banana', (req, res, next) => {
+  res.render('rooms/banana')
+})
+
+router.post('/banana', (req, res, next) => {
+  redirectToNextRoom(req, res, next)
+})
+
+router.get('/form', (req, res, next) => {
+  res.render('rooms/form')
+})
 
 module.exports = router
