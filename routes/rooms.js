@@ -51,4 +51,16 @@ router.post("/consoling", (req, res, next) => {
   res.render("rooms/consoling");
 });
 
+router.get("/hex-color", (req, res, next) => {
+  res.render("rooms/hex-color");
+});
+
+router.post("/hex-color", (req, res, next) => {
+  let fruit = (req.body.fruit + "").toLowerCase();
+  if (fruit !== "banana") res.render("rooms/hex-color");
+  else {
+    redirectToNextRoom(req, res, next);
+  }
+});
+
 module.exports = router;

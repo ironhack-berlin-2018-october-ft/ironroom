@@ -1,5 +1,6 @@
 const Team = require('./models/Team')
 const rooms = require('./data/rooms')
+const { gameDuration } = require('./data/constants')
 
 module.exports = {
   isConnected: function (req, res, next) {
@@ -21,12 +22,21 @@ module.exports = {
       return
     }
 
+    let startingAtTime = req.user.startingAt.getTime() / 1000
+    let currentTime = (new Date).getTime() / 1000
+
+    if (currentTime - startingAtTime > gameDuration) {
+      console.log("OVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+      req.logout()
+      res.redirect('/game-over')
+    }
+
     res.locals.layout = 'roomsLayout'
 
     const curRoomIndex = rooms.findIndex(room => room.url === req.originalUrl)
     if (curRoomIndex <= req.user.roomIndex) next()
     else {
-      Team.findByIdAndUpdate(req.user._id, { roomIndex: curRoomIndex })
+      Team.findByIdAndUpdate(req.user._id, { roomIndex: curRoomIndex, enteredAt: Date.now() })
         .then(team => next())
     }
   },
