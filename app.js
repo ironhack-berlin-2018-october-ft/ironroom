@@ -81,7 +81,8 @@ require("./passport")(app);
 
 app.use((req, res, next) => {
   if (req.user) {
-    res.locals.duration = require("./data/constants").duration;
+    res.locals.currentTimestamp = Math.round(Date.now() / 1000);
+    res.locals.gameDuration = require("./data/constants").gameDuration;
     res.locals.startingAt = Math.round(req.user.startingAt.getTime() / 1000);
   }
   res.locals.isConnected = req.isAuthenticated();
