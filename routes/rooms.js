@@ -41,9 +41,14 @@ router.get("/consoling", (req, res, next) => {
 });
 
 router.post("/consoling", (req, res, next) => {
+  console.log(req.body.console2);
   if (
     req.body.console1 === "checked" &&
+    req.body.console2 === undefined &&
     req.body.console3 === "checked" &&
+    req.body.console4 === undefined &&
+    req.body.console5 === undefined &&
+    req.body.console6 === undefined &&
     req.body.console7 === "checked"
   ) {
     redirectToNextRoom(req, res, next);
