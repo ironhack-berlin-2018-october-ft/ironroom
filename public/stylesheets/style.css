@@ -128,4 +128,7 @@ a {
 ::-webkit-scrollbar {
   display: none; }
 
+.text-center {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */

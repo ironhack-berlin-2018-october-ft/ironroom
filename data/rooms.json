@@ -143,5 +143,38 @@
         "text": "Chartreuse has probably another meaning"
       }
     ]
+  },
+  {
+    "url": "/rooms/hex-color",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "So colors have names as well as hexadecimal and rgb values. Interesting..."
+      },
+      {
+        "timeInMin": 0,
+        "text": "What's this riddle's about?"
+      },
+      {
+        "timeInMin": 1,
+        "text": "Is it about strings or numbers?"
+      },
+      {
+        "timeInMin": 2,
+        "text": "Seems like it's about both, but the url input should clearly be a string."
+      },
+      {
+        "timeInMin": 3,
+        "text": "Hmmm... What happens when you concatenate a string and a number?"
+      },
+      {
+        "timeInMin": 4,
+        "text": "Could it be that the answer is... my favorite fruit?"
+      },
+      {
+        "timeInMin": 5,
+        "text": "Try typing in 'banana'."
+      }
+    ]
   }
 ]
