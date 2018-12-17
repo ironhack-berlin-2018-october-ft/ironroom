@@ -1,0 +1,16 @@
+<div>
+  <h2>Choose only the statements that would log "true" in the console.</h2><br>
+
+  <form action="/rooms/consoling" method="POST">
+    <br><br>
+
+    <input type="checkbox" name="console1" value="checked"> console.log(1<2)<br><br>{{!-- true --}}
+      <input type="checkbox" name="console2" value="checked"> console.log(1>2)<br><br>{{!-- false --}}
+      <input type="checkbox" name="console3" value="checked"> console.log(10<2<3)<br><br>{{!-- true --}}
+        <input type="checkbox" name="console4" value="checked"> console.log(10>2>3)<br><br>{{!-- false --}}
+        <input type="checkbox" name="console5" value="checked"> console.log("42" === 42)<br><br>{{!-- false --}}
+        <input type="checkbox" name="console6" value="checked"> console.log({"a": 1}=={"a": 1})<br><br>{{!-- false --}}
+        <input type="checkbox" name="console7" value="checked"> console.log(!null)<br><br>{{!-- true --}}
+        <button class="btn btn-outline-light my-2 my-sm-0" action="submit">Submit</button>
+  </form>
+</div>

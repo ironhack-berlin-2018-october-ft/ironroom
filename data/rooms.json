@@ -143,5 +143,34 @@
         "text": "Chartreuse has probably another meaning"
       }
     ]
+  },
+  {
+    "url": "/rooms/consoling",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "This is annoying"
+      },
+      {
+        "timeInMin": 1,
+        "text": "I'm really fed up with this room"
+      },
+      {
+        "timeInMin": 2,
+        "text": "The Chartreuse colour is too much for me"
+      },
+      {
+        "timeInMin": 3,
+        "text": "Really, was there no other colours in the world to choose from?!"
+      },
+      {
+        "timeInMin": 4,
+        "text": "My brain is full of carrots and 42s!!"
+      },
+      {
+        "timeInMin": 5,
+        "text": "You need to help me out here. Select the expressions that would be true"
+      }
+    ]
   }
 ]
