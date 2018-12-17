@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let duration = Number(document.querySelectorAll('#timerDuration')[0].value)
-  let startingAt = Number(document.querySelectorAll('#timerStartingAt')[0].value)
-  let currentTimestamp = Math.floor(Date.now() / 1000)
+  let duration = Number(document.querySelector('#timerGameDuration').value)
+  let startingAt = Number(document.querySelector('#timerStartingAt').value)
+  let currentTimestamp = Number(document.querySelector('#timerCurrentTimestamp').value)
+  // let currentTimestamp = Math.floor(Date.now() / 1000)
   var nbOfSeconds = duration + startingAt - currentTimestamp
 
   displayTimer()
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function addExtraZero(number) {
-    if (number < 10) {
+    if (number < 10 && number >= 0) {
       return '0' + number
     }
     return '' + number
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // CHAT
   // ~~~~~~~~
   function renderChat(html) {
-    let chatArea = document.querySelectorAll('#chatArea')[0]
+    let chatArea = document.querySelector('#chatArea')
     chatArea.innerHTML = html;
     // scroll to bottom always
     chatArea.scrollTop = chatArea.scrollHeight;
