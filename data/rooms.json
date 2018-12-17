@@ -223,6 +223,39 @@
       },
       {
         "timeInMin": 1,
+        "text": "This seems like a tricky one. What does the title mean?"
+      },
+      {
+        "timeInMin": 2,
+        "text": "Is the flag enough?"
+      },
+      {
+        "timeInMin": 3,
+        "text": "How can we see the code itself?"
+      },
+      {
+        "timeInMin": 4,
+        "text": "The solution should add a button that'll take us to the next room, but can any flag button append the solution button?"
+      },
+      {
+        "timeInMin": 5,
+        "text": "Read the script tag in the elements tab of the dev tools and find the right button to append the solution button."
+      }
+    ]
+  },
+  {
+    "url": "/rooms/flag",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "Cool to know that we can read script tags and understand what's happening in a page."
+      },
+      {
+        "timeInMin": 0,
+        "text": "Seems like these riddles never end... Will we make it in time?"
+      },
+      {
+        "timeInMin": 1,
         "text": ""
       },
       {

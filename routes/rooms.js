@@ -62,4 +62,12 @@ router.get('/form', (req, res, next) => {
   res.render('rooms/form')
 })
 
+router.post('/form', (req, res, next) => {
+  redirectToNextRoom(req, res, next)
+})
+
+router.get('/flag', (req, res, next) => {
+  res.render('rooms/flag')
+})
+
 module.exports = router
