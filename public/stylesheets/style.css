@@ -176,4 +176,16 @@ a {
   justify-content: center;
   align-items: center; }
 
+.color-buttons-div {
+  display: flex;
+  flex-direction: column; }
+  .color-buttons-div .color-divs {
+    display: flex; }
+    .color-buttons-div .color-divs .color-div {
+      min-height: 400px;
+      min-width: 200px; }
+  .color-buttons-div .buttons {
+    display: flex;
+    justify-content: space-around; }
+
 /*# sourceMappingURL=style.css.map */

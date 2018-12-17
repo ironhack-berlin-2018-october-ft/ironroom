@@ -194,3 +194,18 @@ a {
 .stackoverflow {
   @include flex-props();
 }
+.color-buttons-div {
+  display: flex;
+  flex-direction: column;
+  .color-divs {
+    display: flex;
+    .color-div {
+      min-height: 400px;
+      min-width: 200px;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+}
