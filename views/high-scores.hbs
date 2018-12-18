@@ -1,0 +1,62 @@
+<div class="high-scores-container">
+
+  <div class="title">
+    <h2>
+      High Scores
+
+    </h2>
+  </div>
+
+  <div class="tables-container">
+
+    <div class="scores">
+      <h4>Global</h4>
+
+      <table class="table table-hover border-right-nbs" style="width:100%">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Participants</th>
+            <th>Room</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each bestTeamsGlobal}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.participants}}</td>
+            <td>{{this.roomIndex}}</td>
+            <td>{{#niceTimer}}{{this.time}}{{/niceTimer}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+    </div>
+    <div class="scores">
+      <h4>Today</h4>
+
+      <table class="table table-hover border-right-nbs" style="width:100%">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Participants</th>
+            <th>Room</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each bestTeamsOfToday}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.participants}}</td>
+            <td>{{this.roomIndex}}</td>
+            <td>{{#niceTimer}}{{this.time}}{{/niceTimer}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

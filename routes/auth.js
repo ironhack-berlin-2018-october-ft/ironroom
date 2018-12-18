@@ -12,11 +12,11 @@ router.get("/join", (req, res, next) => {
 });
 
 router.post("/join", (req, res, next) => {
-  const name = req.body.name;
-  // if (username === "" || password === "") {
-  //   res.render("auth/join", { message: "Indicate username and password" });
-  //   return;
-  // }
+  const name = req.body.name
+  let participants = []
+  if (req.body.participants && req.body.participants.length > 0) {
+    participants = req.body.participants.map(p => p.trim()).filter(p => p !== "")
+  }
 
   Team.findOne({ name }, "name", (err, team) => {
     if (team !== null) {
@@ -26,6 +26,7 @@ router.post("/join", (req, res, next) => {
 
     const newTeam = new Team({
       name,
+      participants
     });
 
     newTeam.save()

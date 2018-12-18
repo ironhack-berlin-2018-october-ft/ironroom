@@ -14,5 +14,11 @@ const teamSchema = new Schema({
   }]
 });
 
+teamSchema.methods.getTime = function () {
+  return (this.enteredAt - this.startingAt)
+};
+
+
+
 const User = mongoose.model('User', teamSchema);
 module.exports = User;

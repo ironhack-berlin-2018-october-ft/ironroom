@@ -64,6 +64,20 @@ hbs.registerHelper("ifUndefined", (value, options) => {
   }
 });
 
+hbs.registerHelper('niceTimer', function (options) {
+  function addExtraZero(number) {
+    if (number < 10 && number >= 0) {
+      return '0' + number
+    }
+    return '' + number
+  }
+  let nbOfSeconds = Math.round(Number(options.fn(this)) / 1000)
+  let h = Math.floor(nbOfSeconds / (60 * 60))
+  let m = Math.floor((nbOfSeconds - h * 60 * 60) / 60)
+  let s = nbOfSeconds - (h * 60 * 60) - (m * 60)
+  return `${addExtraZero(h)}:${addExtraZero(m)}:${addExtraZero(s)}`
+});
+
 // default value for title local
 app.locals.title = "IronRoom";
 
@@ -93,6 +107,5 @@ app.use((req, res, next) => {
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth"));
 app.use("/rooms", roomsMiddleware, require("./routes/rooms"));
-app.use("/highscore", require("./routes/highscore"));
 
 module.exports = app;
