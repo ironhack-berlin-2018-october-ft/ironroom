@@ -1,0 +1,60 @@
+<h1>Let's read some code...</h1>
+
+<div class="color-buttons-div">
+  <div class="color-divs">
+    <div class="color-div" id="color1" style="background-color: white"></div>
+    <div class="color-div" id="color2" style="background-color: green"></div>
+    <div class="color-div" id="color3" style="background-color: purple"></div>
+  </div>
+  <div class="buttons">
+    <button id="first-button">Vive</button>
+    <button id="second-button">La</button>
+    <button id="third-button">France</button>
+  </div>
+  <form class="flagForm" method="post">
+
+  </form>
+</div>
+
+<script>
+  let firstButton = document.getElementById("first-button");
+  let secondButton = document.getElementById("second-button");
+  let thirdButton = document.getElementById("third-button");
+  let color1 = document.getElementById("color1");
+  let color2 = document.getElementById("color2");
+  let color3 = document.getElementById("color3");
+
+  firstButton.addEventListener("click", () => {
+    colorArray1 = ["white", "blue", "green", "red", "black"];
+    let currentColor = color1.style.backgroundColor;
+    let i = colorArray1.indexOf(currentColor);
+    (i === (colorArray1.length - 1)) ? i = 0 : i++;
+    color1.style.backgroundColor = colorArray1[i];
+  })
+
+  secondButton.addEventListener("click", () => {
+    colorArray2 = ["yellow", "white", "blue", "green", "red"];
+    let currentColor = color2.style.backgroundColor;
+    let i = colorArray2.indexOf(currentColor);
+    (i === (colorArray2.length - 1)) ? i = 0 : i++;
+    color2.style.backgroundColor = colorArray2[i];
+    //Add the solution button to the page
+    if ((color1.style.backgroundColor === "blue") && (color2.style.backgroundColor === "white") && (color3.style.backgroundColor === "red")) {
+      let addTheButtonToMe = document.getElementsByClassName("flagForm");
+      console.log(addTheButtonToMe[0])
+      let button = document.createElement("Button");
+      let text = document.createTextNode("Click Me");
+      button.appendChild(text);
+      addTheButtonToMe[0].appendChild(button);
+    }
+  })
+
+  thirdButton.addEventListener("click", () => {
+    colorArray3 = ["white", "blue", "green", "purple", "red"];
+    let currentColor = color3.style.backgroundColor;
+    let i = colorArray3.indexOf(currentColor);
+    (i === (colorArray3.length - 1)) ? i = 0 : i++;
+    color3.style.backgroundColor = colorArray3[i];
+  })
+
+</script>

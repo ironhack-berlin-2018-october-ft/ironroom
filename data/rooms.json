@@ -143,5 +143,211 @@
         "text": "Chartreuse has probably another meaning"
       }
     ]
+  },
+  {
+    "url": "/rooms/consoling",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "This is annoying"
+      },
+      {
+        "timeInMin": 0,
+        "text": "I'm really fed up with this room"
+      },
+      {
+        "timeInMin": 0,
+        "text": "The Chartreuse colour is too much for me"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Really, was there no other colours in the world to choose from?!"
+      },
+      {
+        "timeInMin": 0,
+        "text": "My brain is full of carrots and 42s!!"
+      },
+      {
+        "timeInMin": 0,
+        "text": "You need to help me out here. Select the expressions that would be true"
+      }
+    ]
+  },
+  {
+    "url": "/rooms/booleans",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "So colors have names as well as hexadecimal and rgb values. Interesting..."
+      },
+      {
+        "timeInMin": 0,
+        "text": "What's this riddle's about?"
+      },
+      {
+        "timeInMin": 1,
+        "text": "Is it about strings or numbers?"
+      },
+      {
+        "timeInMin": 2,
+        "text": "Seems like it's about both, but the input should clearly be a string."
+      },
+      {
+        "timeInMin": 3,
+        "text": "Hmmm... What happens when you concatenate a string and a number?"
+      },
+      {
+        "timeInMin": 4,
+        "text": "Could it be that the answer is... my favorite fruit?"
+      },
+      {
+        "timeInMin": 5,
+        "text": "Try typing in 'banana'."
+      }
+    ]
+  },
+  {
+    "url": "/rooms/bridgeoftruth",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "My my that that was really cryptic"
+      },
+      {
+        "timeInMin": 0,
+        "text": "What have we here...?"
+      },
+      {
+        "timeInMin": 0,
+        "text": "I see a bridge and it appears the meaning of life is on both sides of it"
+      },
+      {
+        "timeInMin": 0,
+        "text": "Do you see it?"
+      },
+      {
+        "timeInMin": 1,
+        "text": "Okay good, it appears I can't cross it though. There are massive sections missing."
+      },
+      {
+        "timeInMin": 1,
+        "text": "Any ideas?"
+      },
+      {
+        "timeInMin": 2,
+        "text": "Hmm, not sure if this helps but the bridge is called 'The Bridge of Truth'"
+      },
+      {
+        "timeInMin": 3,
+        "text": "I guess it's something to do with comparative operators"
+      },
+      {
+        "timeInMin": 4,
+        "text": "=*2"
+      },
+      {
+        "timeInMin": 4,
+        "text": "=="
+      }
+    ]
+  },
+  {
+    "url": "/rooms/banana",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "I've always wondered why NaN === NaN is false..."
+      },
+      {
+        "timeInMin": 0,
+        "text": "Let's see what's this one's about..."
+      },
+      {
+        "timeInMin": 1,
+        "text": "The form seems broken..."
+      },
+      {
+        "timeInMin": 2,
+        "text": "When there is no action to a form, it takes the current url as the value."
+      },
+      {
+        "timeInMin": 3,
+        "text": "But what about the method...?"
+      },
+      {
+        "timeInMin": 4,
+        "text": "Should a form send a get request? That sounds wierd."
+      },
+      {
+        "timeInMin": 5,
+        "text": "Try changing the form method to post in the dev tools elements tab."
+      }
+    ]
+  },
+  {
+    "url": "/rooms/form",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "Those developer tools are really handy!"
+      },
+      {
+        "timeInMin": 0,
+        "text": "What have we here?"
+      },
+      {
+        "timeInMin": 1,
+        "text": "This seems like a tricky one. What does the title mean?"
+      },
+      {
+        "timeInMin": 2,
+        "text": "Is the flag enough?"
+      },
+      {
+        "timeInMin": 3,
+        "text": "How can we see the code itself?"
+      },
+      {
+        "timeInMin": 4,
+        "text": "The solution should add a button that'll take us to the next room, but can any flag button append the solution button?"
+      },
+      {
+        "timeInMin": 5,
+        "text": "Read the script tag in the elements tab of the dev tools and find the right button to append the solution button."
+      }
+    ]
+  },
+  {
+    "url": "/rooms/flag",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "Cool to know that we can read script tags and understand what's happening in a page."
+      },
+      {
+        "timeInMin": 0,
+        "text": "Seems like these riddles never end... Will we make it in time?"
+      },
+      {
+        "timeInMin": 1,
+        "text": ""
+      },
+      {
+        "timeInMin": 2,
+        "text": ""
+      },
+      {
+        "timeInMin": 3,
+        "text": ""
+      },
+      {
+        "timeInMin": 4,
+        "text": ""
+      },
+      {
+        "timeInMin": 5,
+        "text": ""
+      }
+    ]
   }
 ]
