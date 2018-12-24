@@ -55,33 +55,52 @@ document.addEventListener(
         });
     }
 
+    function sendMessage() {
+      let content = document.querySelector("#chatInput").value.trim()
+      if (!content) {
+        document.querySelector("#chatInput").value = ""
+        return;
+      }
+      fetch("/chat", {
+        method: "POST",
+        body: new URLSearchParams(
+          `input=${content}`
+        )
+      })
+        .then(response => response.text())
+        .then(result => {
+          renderChat(result);
+          document.querySelector("#chatInput").value = "";
+
+          // For the first interaction, we go to the next page
+          if (window.location.pathname === "/rooms/0") {
+            window.location.pathname = "/rooms/1";
+            // window.history.pushState('', '', '/rooms/1');
+          }
+        }); // FIXME: handle error
+    }
+
     updateChat();
     setInterval(updateChat, 5000);
 
     document
-      .querySelectorAll("#chatInput")[0]
+      .querySelector("#chatInput")
       .addEventListener("keyup", event => {
         if (event.key === "Enter") {
-          fetch("/chat", {
-            method: "POST",
-            body: new URLSearchParams(
-              `input=${document.querySelectorAll("#chatInput")[0].value.trim()}`
-            )
-          })
-            .then(response => response.text())
-            .then(result => {
-              renderChat(result);
-              document.querySelectorAll("#chatInput")[0].value = "";
-
-              // For the first interaction, we go to the next page
-              if (window.location.pathname === "/rooms/0") {
-                window.location.pathname = "/rooms/1";
-                // window.history.pushState('', '', '/rooms/1');
-              }
-            }); // FIXME: handle error
+          sendMessage()
         }
+      });
+
+    document
+      .querySelector(".chat-input .send")
+      .addEventListener("click", event => {
+        sendMessage()
       });
   },
   false
 );
-$("#draggable").draggable();
+
+
+
+
+// $("#draggable").draggable();

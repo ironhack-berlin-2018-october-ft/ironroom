@@ -20,7 +20,7 @@ router.post("/join", (req, res, next) => {
 
   Team.findOne({ name }, "name", (err, team) => {
     if (team !== null) {
-      res.render("auth/signup", { message: `The team with the name "${name}" already exists` });
+      res.render("auth/join", { message: `The team with the name "${name}" already exists` });
       return;
     }
 
@@ -56,20 +56,20 @@ router.post("/join", (req, res, next) => {
 // }));
 
 // router.get("/signup", (req, res, next) => {
-//   res.render("auth/signup");
+//   res.render("auth/join");
 // });
 
 // router.post("/signup", (req, res, next) => {
 //   const username = req.body.username;
 //   const password = req.body.password;
 //   if (username === "" || password === "") {
-//     res.render("auth/signup", { message: "Indicate username and password" });
+//     res.render("auth/join", { message: "Indicate username and password" });
 //     return;
 //   }
 
 //   Team.findOne({ username }, "username", (err, user) => {
 //     if (user !== null) {
-//       res.render("auth/signup", { message: "The username already exists" });
+//       res.render("auth/join", { message: "The username already exists" });
 //       return;
 //     }
 
@@ -86,7 +86,7 @@ router.post("/join", (req, res, next) => {
 //       res.redirect("/");
 //     })
 //     .catch(err => {
-//       res.render("auth/signup", { message: "Something went wrong" });
+//       res.render("auth/join", { message: "Something went wrong" });
 //     })
 //   });
 // });

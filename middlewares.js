@@ -31,7 +31,7 @@ module.exports = {
       res.redirect('/game-over')
     }
 
-    res.locals.layout = 'roomsLayout'
+    res.locals.isRoomLayout = true
 
     const curRoomIndex = rooms.findIndex(room => room.url === req.originalUrl)
     if (curRoomIndex <= req.user.roomIndex) next()

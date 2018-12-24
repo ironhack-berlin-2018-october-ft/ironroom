@@ -23,24 +23,46 @@
 </head>
 
 <body>
-
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
       <img src="/images/icon_white.png" width="30" height="" class="d-inline-block align-center" alt="">
       IronRoom
     </a>
-
+    <div id="timer"></div>
     <a href="/high-scores">
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">High Scores</button>
     </a>
-
   </nav>
 
+  {{#if isRoomLayout}}
+  <div class="rooms-body">
+
+    <div class="body">
+
+      {{{body}}}
+    </div>
 
 
+    <div class="chat-box">
+
+      <div id="chatArea" class="chat-area"></div>
+
+      <div class="chat-input">
+        <textarea id="chatInput" class="form-control" placeholder=">"></textarea>
+        <button class="btn btn-outline-dark send">Send</button>
+      </div>
+    </div>
+  </div>
+  {{else}}
   {{{body}}}
-  {{!--
-  <script src="/javascripts/script.js"></script> --}}
+  {{/if}}
+
+  {{#if isRoomLayout}}
+  <input id="timerCurrentTimestamp" style="display: none;" value="{{ currentTimestamp }}"></input>
+  <input id="timerGameDuration" style="display: none;" value="{{ gameDuration }}"></input>
+  <input id="timerStartingAt" style="display: none;" value="{{ startingAt }}"></input>
+  <script src="/javascripts/rooms.js"></script>
+  {{/if}}
 </body>
 
 </html>
