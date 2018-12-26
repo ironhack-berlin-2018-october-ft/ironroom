@@ -112,6 +112,41 @@ router.post("/form", (req, res, next) => {
 
 router.get("/flag", (req, res, next) => {
   res.render("rooms/flag");
-});
+})
+
+router.get("/robin", (req, res, next) => {
+  res.render("rooms/robin")
+})
+
+router.post("/robin", (req, res, next) => {
+  let n5 = Number(req.body['5'])
+  let n12 = Number(req.body['12'])
+  let n17 = Number(req.body['17'])
+  let n28 = Number(req.body['28'])
+  let n35 = Number(req.body['35'])
+  let n41 = Number(req.body['41'])
+  let totalArrows = n5 + n12 + n17 + n28 + n35 + n41
+  let totalPoints = 5 * n5 + 12 * n12 + 17 * n17 + 28 * n28 + 35 * n35 + 41 * n41
+  if (totalArrows === 4 && totalPoints === 87) redirectToNextRoom(req, res, next)
+  else res.redirect("/rooms/robin")
+})
+
+router.get("/z", (req, res, next) => {
+  res.render("rooms/z")
+})
+
+router.post("/z", (req, res, next) => {
+  let a = Number(req.body['a'])
+  let b = Number(req.body['b'])
+  let c = Number(req.body['c'])
+  let d = Number(req.body['d'])
+  let e = Number(req.body['e'])
+  let f = Number(req.body['f'])
+  let g = Number(req.body['g'])
+  if ([a, b, c, d, e, f, g].sort().join('') === '1234567' && a + b + c === c + d + e && e + f + g === c + d + e) {
+    redirectToNextRoom(req, res, next)
+  }
+  else res.redirect("/rooms/z")
+})
 
 module.exports = router;

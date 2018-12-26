@@ -1,0 +1,78 @@
+<style>
+  .z {
+    text-align: center;
+  }
+
+  .z .box {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .z input {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 30px;
+    border: 2px solid black;
+  }
+
+
+  .z button {
+    border: 2px solid black;
+    background: white;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 6px 10px;
+    margin: 20px;
+  }
+  .z input[name="a"] {
+    top: 31px;
+    left: 50px;
+  }
+  .z input[name="b"] {
+    top: 31px;
+    left: 145px;
+  }
+  .z input[name="c"] {
+    top: 31px;
+    left: 237px;
+  }
+  .z input[name="d"] {
+    top: 196px;
+    left: 150px;
+  }
+  .z input[name="e"] {
+    top: 361px;
+    left: 63px;
+  }
+  .z input[name="f"] {
+    top: 361px;
+    left: 156px;
+  }
+  .z input[name="g"] {
+    top: 361px;
+    left: 250px;
+  }
+</style>
+
+<div class="z">
+  <form method="post">
+    <div class="box">
+      <img src="/images/z.png" alt="">
+      <input type="text" name="a">
+      <input type="text" name="b">
+      <input type="text" name="c">
+      <input type="text" name="d">
+      <input type="text" name="e">
+      <input type="text" name="f">
+      <input type="text" name="g">
+    </div>
+    <br>
+    <button type="submit">Try!</button>
+    <p>You have to use all digits from 1 to 7 and the sums of each line should be the same</p>
+  </form>
+</div>
