@@ -1,0 +1,44 @@
+<style>
+  .travel {
+    height: 100%;
+    width: 100%;
+    background-image: url(/images/travel-map.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .travel .digits {
+    font-size: 30px;
+    margin: 20px;
+  }
+
+  .travel input {
+    margin: 20px;
+    text-align: center;
+    width: initial;
+  }
+</style>
+
+<div class="travel">
+  <div class="digits">-27.47 153.02</div>
+  <div class="digits">59.91 10.74</div>
+  <div class="digits">5.32 -4.02</div>
+  <div class="digits">35.68 139.76</div>
+
+  <form method="post" id="form">
+    <input class="form-control" type="text" required minlength="4" maxlength="4" name="secret">
+  </form>
+</div>
+
+<script>
+  document.querySelector('#form input').addEventListener('keyup', function (event) {
+    if (event.target.value.length === 4) {
+      document.querySelector('#form').submit()
+    }
+  })
+</script>

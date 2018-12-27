@@ -371,5 +371,26 @@
         "text": "7 1 3 6 2 5 4"
       }
     ]
+  },
+  {
+    "url": "/rooms/travel",
+    "hints": [
+      {
+        "timeInMin": 0,
+        "text": "Numbers, again..."
+      },
+      {
+        "timeInMin": 4,
+        "text": "It seems to be coordinates"
+      },
+      {
+        "timeInMin": 7,
+        "text": "We can write 4 characters and we have 4 coordinates..."
+      },
+      {
+        "timeInMin": 9,
+        "text": "Each coordinates represents a city. What about taking the first letter of each city?"
+      }
+    ]
   }
 ]

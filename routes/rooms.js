@@ -149,4 +149,15 @@ router.post("/z", (req, res, next) => {
   else res.redirect("/rooms/z")
 })
 
+router.get("/travel", (req, res, next) => {
+  res.render("rooms/travel")
+})
+
+router.post("/travel", (req, res, next) => {
+  if (req.body.secret && req.body.secret.toLowerCase() === 'boat') {
+    redirectToNextRoom(req, res, next)
+  }
+  else res.redirect("/rooms/travel")
+})
+
 module.exports = router;
