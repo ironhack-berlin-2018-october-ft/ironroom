@@ -20,30 +20,8 @@ router.get("/2", (req, res, next) => {
   res.render("rooms/2");
 });
 
-router.get("/gadget", (req, res, next) => {
-  res.render("rooms/gadget");
-});
-
 router.get("/chartreuse", (req, res, next) => {
   res.render("rooms/chartreuse");
-});
-
-router.get("/bridgeoftruth", (req, res, next) => {
-  res.render("rooms/bridgeoftruth");
-});
-router.get("/whatadrag", (req, res, next) => {
-  res.render("rooms/whatadrag");
-});
-
-router.post("/bridgeoftruth", (req, res, next) => {
-  let answer = "==";
-  let { truth } = req.body;
-  if (answer == truth) {
-    // redirectToNextRoom(req, res, next);
-    res.render("success");
-  } else {
-    res.render("rooms/bridgeoftruth");
-  }
 });
 
 router.post("/chartreuse", (req, res, next) => {
@@ -52,15 +30,6 @@ router.post("/chartreuse", (req, res, next) => {
   else {
     redirectToNextRoom(req, res, next);
   }
-});
-
-router.get("/hex-color", (req, res, next) => {
-  res.render("rooms/hex-color");
-});
-
-router.post("/hex-color", (req, res, next) => {
-  let fruit = (req.body.fruit + "").toLowerCase();
-  if (fruit !== "banana") res.render("rooms/hex-color");
 });
 
 router.get("/consoling", (req, res, next) => {
@@ -94,6 +63,22 @@ router.post("/booleans", (req, res, next) => {
     redirectToNextRoom(req, res, next);
   }
 });
+
+router.get("/bridgeoftruth", (req, res, next) => {
+  res.render("rooms/bridgeoftruth");
+});
+
+
+router.post("/bridgeoftruth", (req, res, next) => {
+  let answer = "==";
+  let { truth } = req.body;
+  if (answer == truth) {
+    redirectToNextRoom(req, res, next);
+  } else {
+    res.render("rooms/bridgeoftruth");
+  }
+});
+
 router.get("/banana", (req, res, next) => {
   res.render("rooms/banana");
 });
@@ -102,17 +87,15 @@ router.post("/banana", (req, res, next) => {
   redirectToNextRoom(req, res, next);
 });
 
-router.get("/form", (req, res, next) => {
-  res.render("rooms/form");
-});
+// router.get("/form", (req, res, next) => {
+//   res.render("rooms/form");
+// });
 
-router.post("/form", (req, res, next) => {
-  redirectToNextRoom(req, res, next);
-});
+// router.post("/form", (req, res, next) => {
+//   redirectToNextRoom(req, res, next);
+// });
 
-router.get("/flag", (req, res, next) => {
-  res.render("rooms/flag");
-})
+
 
 router.get("/robin", (req, res, next) => {
   res.render("rooms/robin")
@@ -159,5 +142,17 @@ router.post("/travel", (req, res, next) => {
   }
   else res.redirect("/rooms/travel")
 })
+
+
+
+
+
+
+
+router.get("/whatadrag", (req, res, next) => {
+  res.render("rooms/whatadrag");
+});
+
+
 
 module.exports = router;

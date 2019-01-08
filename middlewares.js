@@ -8,12 +8,20 @@ module.exports = {
     else res.redirect('/join')
   },
   redirectToNextRoom: function (req, res, next) {
-    const curRoomIndex = rooms.findIndex(room => room.url === req.originalUrl)
+    let url = req.originalUrl
+    if (url.includes('?')) {
+      url = url.substr(0, url.indexOf('?'))
+    }
+    const curRoomIndex = rooms.findIndex(room => room.url === url)
+    console.log('DEBUG curRoomIndex', curRoomIndex);
+    console.log('DEBUG url', url);
     if (curRoomIndex < rooms.length - 1) {
       res.redirect(rooms[curRoomIndex + 1].url)
     }
     else {
-      res.redirect('/success')
+      Team.findByIdAndUpdate(req.user._id, { roomIndex: rooms.length, enteredAt: Date.now() })
+        .then(team => res.redirect('/success'))
+
     }
   },
   roomsMiddleware: function (req, res, next) {

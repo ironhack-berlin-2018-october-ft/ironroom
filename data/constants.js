@@ -1,4 +1,4 @@
 module.exports = {
   // Duration in seconds
-  gameDuration: 120 * 60,
+  gameDuration: 70 * 60,
 };

@@ -55,6 +55,15 @@
     let i = colorArray3.indexOf(currentColor);
     (i === (colorArray3.length - 1)) ? i = 0 : i++;
     color3.style.backgroundColor = colorArray3[i];
+
+    if ((color1.style.backgroundColor === "blue") && (color2.style.backgroundColor === "white") && (color3.style.backgroundColor === "red")) {
+      let addTheButtonToMe = document.getElementsByClassName("flagForm");
+      console.log(addTheButtonToMe[0])
+      let button = document.createElement("Button");
+      let text = document.createTextNode("Click Me");
+      button.appendChild(text);
+      addTheButtonToMe[0].appendChild(button);
+    }
   })
 
 </script>
