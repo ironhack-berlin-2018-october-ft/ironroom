@@ -13,20 +13,18 @@ router.get('/', (req, res, next) => {
 router.get("/high-scores", (req, res, next) => {
   Team.find({}, "name participants roomIndex startingAt enteredAt").lean()
     .then(teams => {
-      console.log('DEBUG ', teams[0].enteredAt);
-      console.log('DEBUG ', teams[0].startingAt);
       res.render("high-scores", {
         teams,
         bestTeamsGlobal: teams
           .map(t => ({ ...t, time: (t.enteredAt - t.startingAt) }))
           .sort((a, b) => (b.roomIndex - a.roomIndex) * 10 ** 9 + a.time - b.time)
-          .slice(0, 5),
+          .slice(0, 10),
         bestTeamsOfToday: teams
           .filter(team => team.startingAt.toISOString().substr(0, 10) === new Date().toISOString().substr(0, 10))
           // .map(t => ({ ...t, time: t.getTime() / (1000) }))
           .map(t => ({ ...t, time: (t.enteredAt - t.startingAt) }))
           .sort((a, b) => (b.roomIndex - a.roomIndex) * 10 ** 9 + a.time - b.time)
-          .slice(0, 5),
+          .slice(0, 10),
       })
     })
 })
