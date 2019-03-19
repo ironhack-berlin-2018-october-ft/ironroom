@@ -19,7 +19,7 @@ router.get("/high-scores", (req, res, next) => {
         teams,
         bestTeamsGlobal: teams
           .map(t => ({ ...t, time: (t.enteredAt - t.startingAt) }))
-          .sort((a, b) => b.roomIndex - a.roomIndex)
+          .sort((a, b) => (b.roomIndex - a.roomIndex) * 10 ** 9 + a.time - b.time)
           .slice(0, 5),
         bestTeamsOfToday: teams
           .filter(team => team.startingAt.toISOString().substr(0, 10) === new Date().toISOString().substr(0, 10))
