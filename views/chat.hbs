@@ -1,8 +1,11 @@
 <div>
   {{#each messages}}
-  <div>
+  <div class="my-3">
     <span><b>{{#if isFromTeam}}&lt;{{../teamname}}&gt;{{else}}&lt;john&gt;{{/if}}</b></span>
     <span>{{text}}</span>
   </div>
+  {{#ifNewMessage ../messages @index}}
+  <hr>
+  {{/ifNewMessage}}
   {{/each}}
 </div>

@@ -11,6 +11,7 @@ const teamSchema = new Schema({
   messages: [{
     isFromTeam: Boolean,
     text: String,
+    roomIndex: Number
   }]
 });
 

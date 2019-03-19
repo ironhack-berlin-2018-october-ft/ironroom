@@ -3,6 +3,7 @@ const router = express.Router();
 const Team = require('../models/Team.js')
 const { isConnected } = require('../middlewares')
 const roomsArr = require("../data/rooms")
+const getJohnReply = require("../data/john")
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -40,7 +41,7 @@ router.get('/chat', isConnected, (req, res, next) => {
   })
 
   if (hintToPush) {
-    team.messages.push({ isFromTeam: false, text: hintToPush.text })
+    team.messages.push({ isFromTeam: false, text: hintToPush.text, roomIndex: team.roomIndex })
   }
   team.save().then(() => {
     res.render('chat', { layout: false, messages: team.messages, teamname: team.name });
@@ -48,14 +49,18 @@ router.get('/chat', isConnected, (req, res, next) => {
 })
 
 router.post('/chat', isConnected, (req, res, next) => {
-  Team.findByIdAndUpdate(req.user.id, { $push: { messages: { isFromTeam: true, text: req.body.input } } }, { new: true }).then((doc) => {
+  Team.findByIdAndUpdate(req.user.id, { $push: { messages: { isFromTeam: true, text: req.body.input, roomIndex: req.user.roomIndex } } }, { new: true }).then((team) => {
     // slice creates a copy so the messages pushed later are noe rendered as well.
-    res.render('chat', { layout: false, messages: doc.messages.slice(), teamname: doc.name });
+    res.render('chat', { layout: false, messages: team.messages.slice(), teamname: team.name });
     // also enter John's response ( will be fetched at next 5 sec interval )
 
-    if (doc.roomIndex > 1) {
-      doc.messages.push({ isFromTeam: false, text: 'please, focus on helping me out here not just texting something !' })
-      doc.save()
+    if (team.roomIndex > 1) {
+      team.messages.push({
+        isFromTeam: false,
+        text: getJohnReply(team.messages[team.messages.length - 1].text),
+        roomIndex: team.roomIndex
+      })
+      team.save()
     }
   })
 })

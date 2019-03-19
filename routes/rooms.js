@@ -5,7 +5,12 @@ const rooms = require("../data/rooms");
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.redirect(rooms[req.user.roomIndex].url);
+  try {
+    res.redirect(rooms[req.user.roomIndex].url);
+  }
+  catch (e) {
+    res.redirect('/')
+  }
 });
 
 router.get("/0", (req, res, next) => {
@@ -79,11 +84,11 @@ router.post("/bridgeoftruth", (req, res, next) => {
   }
 });
 
-router.get("/banana", (req, res, next) => {
-  res.render("rooms/banana");
+router.get("/the-form-is-broken", (req, res, next) => {
+  res.render("rooms/the-form-is-broken");
 });
 
-router.post("/banana", (req, res, next) => {
+router.post("/the-form-is-broken", (req, res, next) => {
   redirectToNextRoom(req, res, next);
 });
 

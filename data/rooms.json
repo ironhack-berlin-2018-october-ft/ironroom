@@ -25,6 +25,10 @@
       {
         "timeInMin": 1,
         "text": "I feel alone"
+      },
+      {
+        "timeInMin": 1,
+        "text": "Can you type a message if you are here?"
       }
     ]
   },
@@ -182,11 +186,11 @@
     "hints": [
       {
         "timeInMin": 0,
-        "text": "My my that that was really cryptic"
+        "text": "It was banana. Probably a developer's joke."
       },
       {
         "timeInMin": 0,
-        "text": "What have we here...?"
+        "text": "What do we have here...?"
       },
       {
         "timeInMin": 0,
@@ -209,24 +213,20 @@
         "text": "Hmm, not sure if this helps but the bridge is called 'The Bridge of Truth'"
       },
       {
-        "timeInMin": 7,
+        "timeInMin": 4,
         "text": "What about === or ==?"
       }
     ]
   },
   {
-    "url": "/rooms/banana",
+    "url": "/rooms/the-form-is-broken",
     "hints": [
-      {
-        "timeInMin": 0,
-        "text": "I've always wondered why NaN === NaN is false..."
-      },
       {
         "timeInMin": 0,
         "text": "Let's see what's this one's about..."
       },
       {
-        "timeInMin": 1,
+        "timeInMin": 0,
         "text": "The form seems broken..."
       },
       {
@@ -234,12 +234,12 @@
         "text": "When there is no action to a form, it takes the current url as the value."
       },
       {
-        "timeInMin": 3,
+        "timeInMin": 2,
         "text": "But what about the method...?"
       },
       {
         "timeInMin": 4,
-        "text": "Should a form send a get request? That sounds wierd."
+        "text": "I think the form has a GET method."
       },
       {
         "timeInMin": 7,

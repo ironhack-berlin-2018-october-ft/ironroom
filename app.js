@@ -64,6 +64,26 @@ hbs.registerHelper("ifUndefined", (value, options) => {
   }
 });
 
+hbs.registerHelper("ifNewMessage", (messages, index, options) => {
+  if (arguments.length < 3)
+    throw new Error("Handlebars Helper ifNewMessage needs 2 parameters");
+  if (index === messages.length - 1 || messages[index].roomIndex === messages[index + 1].roomIndex) {
+    return options.inverse(this);
+  } else {
+    return options.fn(this);
+  }
+});
+
+hbs.registerHelper("ifDifferent", (value1, value2, options) => {
+  if (arguments.length < 3)
+    throw new Error("Handlebars Helper ifDifferent needs 2 parameters");
+  if (value1 === value2) {
+    return options.inverse(this);
+  } else {
+    return options.fn(this);
+  }
+});
+
 hbs.registerHelper('niceTimer', function (options) {
   function addExtraZero(number) {
     if (number < 10 && number >= 0) {
